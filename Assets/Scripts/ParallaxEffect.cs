@@ -23,11 +23,11 @@ public class ParallaxEffect : MonoBehaviour
 
     private void Update()
     {
-        setPositionOfEachBackground();
+        SetPositionOfEachBackground();
         _previousCameraPosition = transform.position;
     }
 
-    private void setPositionOfEachBackground()
+    private void SetPositionOfEachBackground()
     {
         for (int i = 0; i < backgroundLayers.Length; i++)
         {
