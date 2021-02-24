@@ -6,6 +6,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     private Transform _target;
+    private float speed = 10f;
 
     private void Start()
     {
@@ -14,7 +15,7 @@ public class CameraFollow : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 cameraPosition = Vector3.Lerp(transform.position, new Vector3(_target.position.x, 0, transform.position.z), Time.fixedDeltaTime);
+        Vector3 cameraPosition = Vector3.Lerp(transform.position, new Vector3(_target.position.x, 0, transform.position.z), speed * Time.fixedDeltaTime);
         transform.position = cameraPosition;
     }
 }
