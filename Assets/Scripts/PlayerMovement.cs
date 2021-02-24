@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 20f;
 
     private Rigidbody2D _playerRb;
-    private bool _grounded;
+    public bool _grounded;
     private LayerMask _groundLayerMask;
 
     private void Start()
@@ -41,6 +41,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        _grounded = false;
+        if (other.gameObject.layer == _groundLayerMask)
+        {
+            _grounded = false;
+        }
     }
 }
