@@ -6,11 +6,11 @@ public class PlayerMovement : MonoBehaviour
 {
     public float jumpVelocity = 10f;
     public float speed = 20f;
-    
+
     private Rigidbody2D _playerRb;
     private bool _grounded;
     private LayerMask _groundLayerMask;
-    
+
     private void Start()
     {
         _playerRb = transform.GetComponent<Rigidbody2D>();
@@ -24,6 +24,11 @@ public class PlayerMovement : MonoBehaviour
         {
             _playerRb.velocity = Vector2.up * jumpVelocity;
         }
+
+        if (transform.position.y <= -5)
+        {
+            GameMenager.GameEnd();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -33,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
             _grounded = true;
         }
     }
-    
+
     private void OnTriggerExit2D(Collider2D other)
     {
         _grounded = false;
