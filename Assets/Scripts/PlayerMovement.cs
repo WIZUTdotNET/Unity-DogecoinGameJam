@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 20f;
 
     private Rigidbody2D _playerRb;
-    public bool _grounded;
+    private bool _grounded;
     private LayerMask _groundLayerMask;
 
     private void Start()
