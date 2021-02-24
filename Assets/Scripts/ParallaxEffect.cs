@@ -9,7 +9,7 @@ public class ParallaxEffect : MonoBehaviour
 
     private float[] _parallaxScales;
     private Vector3 _previousCameraPosition;
-    
+
     private void Start()
     {
         _previousCameraPosition = transform.position;
@@ -17,7 +17,7 @@ public class ParallaxEffect : MonoBehaviour
         _parallaxScales = new float[backgroundLayers.Length];
         for (int i = 0; i < backgroundLayers.Length; i++)
         {
-            _parallaxScales[i] = backgroundLayers[i].position.z;
+            _parallaxScales[i] = backgroundLayers[i].position.z * -1;
         }
     }
 
