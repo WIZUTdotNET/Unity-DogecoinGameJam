@@ -4,24 +4,45 @@ using UnityEngine;
 
 public class ObstacleGenerator : MonoBehaviour
 {
+    private const float PLAYER_DISTANCE_SPAWN_LEVEL_PART = 100f;
     [SerializeField] private Transform levelPart_Start;
-    [SerializeField] private Transform levelPart_1;
-    
+    [SerializeField] private List<Transform> levelPartList;
+    [SerializeField] private Transform player;
+
+    private Vector3 lastEndPosition;
 
     private void Awake()
     {
-        Transform lastLevelPartTransform;
-        lastLevelPartTransform = SpawnLevelPart(levelPart_Start.Find("EndPosition").position);
-        lastLevelPartTransform = SpawnLevelPart(lastLevelPartTransform.Find("EndPosition").position);
-        lastLevelPartTransform = SpawnLevelPart(lastLevelPartTransform.Find("EndPosition").position);
-        lastLevelPartTransform = SpawnLevelPart(lastLevelPartTransform.Find("EndPosition").position);
-        lastLevelPartTransform = SpawnLevelPart(lastLevelPartTransform.Find("EndPosition").position);
-        lastLevelPartTransform = SpawnLevelPart(lastLevelPartTransform.Find("EndPosition").position);
+        lastEndPosition = levelPart_Start.Find("EndPosition").position;
+        SpawnLevelPart();
+        SpawnLevelPart();
+        int startingSpawnLevelParts = 5;
+        for (int i = 0; i < startingSpawnLevelParts; i++)
+        {
+            SpawnLevelPart();
+        }
         
     }
-    private Transform SpawnLevelPart(Vector3 spawnPosition)
+    public Vector3 GetPosition()
     {
-        Transform levelPartTransform = Instantiate(levelPart_1, spawnPosition, Quaternion.identity);
+        return transform.position;
+    }
+    private void Update()
+    {
+        if (Vector3.Distance(player.position,lastEndPosition)<PLAYER_DISTANCE_SPAWN_LEVEL_PART)
+        {
+            SpawnLevelPart();
+        }
+    }
+    private void SpawnLevelPart()
+    {
+        Transform chosenLevelPart = levelPartList[Random.Range(0, levelPartList.Count)];
+        Transform lastLevelPartTransform = SpawnLevelPart(chosenLevelPart, lastEndPosition);
+        lastEndPosition = lastLevelPartTransform.Find("EndPosition").position;
+    }
+    private Transform SpawnLevelPart(Transform levelPart, Vector3 spawnPosition)
+    {
+        Transform levelPartTransform = Instantiate(levelPart, spawnPosition, Quaternion.identity);
         return levelPartTransform;
     }
 }
