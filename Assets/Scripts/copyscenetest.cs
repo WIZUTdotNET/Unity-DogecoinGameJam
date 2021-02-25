@@ -5,7 +5,7 @@ using UnityEngine;
 public class copyscenetest : MonoBehaviour
 {
     
-    public GameObject road;
+    //public GameObject road;
     void Start()
     {
         StartCoroutine(generateLevel());
