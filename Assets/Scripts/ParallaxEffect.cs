@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ParallaxEffect : MonoBehaviour
 {
@@ -15,10 +13,7 @@ public class ParallaxEffect : MonoBehaviour
         _previousCameraPosition = transform.position;
 
         _parallaxScales = new float[backgroundLayers.Length];
-        for (int i = 0; i < backgroundLayers.Length; i++)
-        {
-            _parallaxScales[i] = backgroundLayers[i].position.z * -1;
-        }
+        for (var i = 0; i < backgroundLayers.Length; i++) _parallaxScales[i] = backgroundLayers[i].position.z * -1;
     }
 
     private void Update()
@@ -29,12 +24,12 @@ public class ParallaxEffect : MonoBehaviour
 
     private void SetPositionOfEachBackground()
     {
-        for (int i = 0; i < backgroundLayers.Length; i++)
+        for (var i = 0; i < backgroundLayers.Length; i++)
         {
-            Vector3 layerPosition = backgroundLayers[i].position;
-            float parallax = (_previousCameraPosition.x - transform.position.x) * _parallaxScales[i];
-            float backgroundTargetPositionX = layerPosition.x + parallax;
-            Vector3 backgroundTargetPosition = new Vector3(backgroundTargetPositionX, layerPosition.y, layerPosition.z);
+            var layerPosition = backgroundLayers[i].position;
+            var parallax = (_previousCameraPosition.x - transform.position.x) * _parallaxScales[i];
+            var backgroundTargetPositionX = layerPosition.x + parallax;
+            var backgroundTargetPosition = new Vector3(backgroundTargetPositionX, layerPosition.y, layerPosition.z);
             backgroundLayers[i].position =
                 Vector3.Lerp(layerPosition, backgroundTargetPosition, smoothing * Time.deltaTime);
         }

@@ -1,21 +1,19 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
     private Transform _target;
-    private float speed = 10f;
+    private readonly float speed = 10f;
 
     private void Start()
     {
         _target = GameObject.FindWithTag("Player").transform;
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        Vector3 cameraPosition = Vector3.Lerp(transform.position, new Vector3(_target.position.x, 0, transform.position.z), speed * Time.fixedDeltaTime);
+        var cameraPosition = Vector3.Lerp(transform.position, new Vector3(_target.position.x, 0, transform.position.z),
+            speed * Time.fixedDeltaTime);
         transform.position = cameraPosition;
     }
 }
