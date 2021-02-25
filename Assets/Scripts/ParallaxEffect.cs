@@ -13,7 +13,8 @@ public class ParallaxEffect : MonoBehaviour
         _previousCameraPosition = transform.position;
 
         _parallaxScales = new float[backgroundLayers.Length];
-        for (var i = 0; i < backgroundLayers.Length; i++) _parallaxScales[i] = backgroundLayers[i].position.z * -1;
+        for (var i = 0; i < backgroundLayers.Length; i++) 
+            _parallaxScales[i] = -backgroundLayers[i].position.z;
     }
 
     private void Update()
