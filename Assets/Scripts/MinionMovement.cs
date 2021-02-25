@@ -38,7 +38,7 @@ public class MinionMovement : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             _rb.velocity = new Vector2(-10, 0);
-            GameMenager.Points++;
+            GameMenager.AddPoint();
             GetComponent<ParticleSystem>().Play();
             //tutaj serduszka
             Debug.Log("Jabłko");
