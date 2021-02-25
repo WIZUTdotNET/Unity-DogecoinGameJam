@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.Mathematics;
+using UnityEngine;
 
 
 public class PendulumMovment : MonoBehaviour
@@ -8,32 +9,26 @@ public class PendulumMovment : MonoBehaviour
     public float speedOfPendulum;
     public float swingOffset;
     public float swingAngle;
-    public bool directionOfSwing;
+    public int directionOfSwing;
 
     private float _angleSum;
-    private float _actualangleAngle;
+    private float _actualAngle;
 
-
-    void Update()
+    private void Swing()
     {
-        _actualangleAngle = speedOfPendulum * Time.deltaTime;
+        transform.RotateAround(centerOfRotation.transform.position, directionOfSwing * Vector3.forward,
+            _actualAngle);
 
-        if (directionOfSwing)
-        {
-            transform.RotateAround(centerOfRotation.transform.position, Vector3.forward, _actualangleAngle);
-            
-            _angleSum += _actualangleAngle;
-            if (_angleSum + swingOffset > swingAngle)
-                directionOfSwing = false;
-        }
-        else
-        {
-            transform.RotateAround(centerOfRotation.transform.position, -Vector3.forward, _actualangleAngle);
-            
-            _angleSum -= _actualangleAngle;
-            if (_angleSum + swingOffset < -swingAngle)
-                directionOfSwing = true;
-        }
+        _angleSum += directionOfSwing * _actualAngle;
+        if (math.abs(_angleSum + swingOffset) > swingAngle)
+            directionOfSwing *= -1;
+    }
+
+    private void Update()
+    {
+        _actualAngle = speedOfPendulum * Time.deltaTime;
+
+        Swing();
 
         if (_angleSum > 360)
             _angleSum -= 360;
