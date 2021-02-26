@@ -2,8 +2,8 @@
 
 public class CameraFollow : MonoBehaviour
 {
+    private float _speed = 2f;
     private Transform _target;
-    private float speed = 2f;
 
     private void Start()
     {
@@ -13,8 +13,8 @@ public class CameraFollow : MonoBehaviour
     private void FixedUpdate()
     {
         var cameraPosition = Vector3.Lerp(transform.position, new Vector3(_target.position.x, 0, transform.position.z),
-            speed * Time.fixedDeltaTime);
+            _speed * Time.fixedDeltaTime);
         transform.position = cameraPosition;
-        speed = _target.GetComponent<PlayerMovement>().speed;
+        _speed = _target.GetComponent<PlayerMovement>().speed;
     }
 }

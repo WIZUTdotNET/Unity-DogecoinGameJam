@@ -2,11 +2,12 @@
 
 public class PlayerMovement : MonoBehaviour
 {
+    private const int VoidLevel = -20;
     public float jumpVelocity = 10f;
     public float speed = 20f;
+
     private bool _grounded;
     private LayerMask _groundLayerMask;
-
     private Rigidbody2D _playerRb;
 
     private void Start()
@@ -21,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
         _playerRb.velocity = new Vector2(speed, _playerRb.velocity.y);
         if (_grounded && Input.GetButtonDown("Jump")) _playerRb.velocity = Vector2.up * jumpVelocity;
 
-        if (transform.position.y <= -20) GameManager.GameEnd();
+        KillWhenUngerGround();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -32,6 +33,11 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.layer == _groundLayerMask) _grounded = false;
+    }
+
+    private void KillWhenUngerGround()
+    {
+        if (transform.position.y <= VoidLevel) GameManager.GameEnd();
     }
 
     public void SpeedUpPlayer(float multiplier)

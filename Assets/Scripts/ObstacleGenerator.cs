@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class ObstacleGenerator : MonoBehaviour
@@ -9,40 +8,37 @@ public class ObstacleGenerator : MonoBehaviour
     [SerializeField] private List<Transform> levelPartList;
     [SerializeField] private Transform player;
 
-    private Vector3 lastEndPosition;
+    private Vector3 _lastEndPosition;
 
     private void Awake()
     {
-        lastEndPosition = levelPart_Start.Find("EndPosition").position;
+        _lastEndPosition = levelPart_Start.Find("EndPosition").position;
         SpawnLevelPart();
         SpawnLevelPart();
-        int startingSpawnLevelParts = 5;
-        for (int i = 0; i < startingSpawnLevelParts; i++)
-        {
-            SpawnLevelPart();
-        }
-        
+        var startingSpawnLevelParts = 5;
+        for (var i = 0; i < startingSpawnLevelParts; i++) SpawnLevelPart();
     }
+
+    private void Update()
+    {
+        if (Vector3.Distance(player.position, _lastEndPosition) < PLAYER_DISTANCE_SPAWN_LEVEL_PART) SpawnLevelPart();
+    }
+
     public Vector3 GetPosition()
     {
         return transform.position;
     }
-    private void Update()
-    {
-        if (Vector3.Distance(player.position,lastEndPosition)<PLAYER_DISTANCE_SPAWN_LEVEL_PART)
-        {
-            SpawnLevelPart();
-        }
-    }
+
     private void SpawnLevelPart()
     {
-        Transform chosenLevelPart = levelPartList[Random.Range(0, levelPartList.Count)];
-        Transform lastLevelPartTransform = SpawnLevelPart(chosenLevelPart, lastEndPosition);
-        lastEndPosition = lastLevelPartTransform.Find("EndPosition").position;
+        var chosenLevelPart = levelPartList[Random.Range(0, levelPartList.Count)];
+        var lastLevelPartTransform = SpawnLevelPart(chosenLevelPart, _lastEndPosition);
+        _lastEndPosition = lastLevelPartTransform.Find("EndPosition").position;
     }
+
     private Transform SpawnLevelPart(Transform levelPart, Vector3 spawnPosition)
     {
-        Transform levelPartTransform = Instantiate(levelPart, spawnPosition, Quaternion.identity);
+        var levelPartTransform = Instantiate(levelPart, spawnPosition, Quaternion.identity);
         return levelPartTransform;
     }
 }

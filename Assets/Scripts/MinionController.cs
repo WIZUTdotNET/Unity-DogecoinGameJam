@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Random = UnityEngine.Random;
+﻿using UnityEngine;
 
 public class MinionController : MonoBehaviour
 {
@@ -10,8 +6,8 @@ public class MinionController : MonoBehaviour
     public float accelerationTime = 2f;
 
     private Vector2 _movement;
-    private float _timeLeft;
     private Rigidbody2D _rb;
+    private float _timeLeft;
 
     private void Start()
     {
@@ -22,6 +18,18 @@ public class MinionController : MonoBehaviour
     {
         RandomMovement();
         DestroyWhenBehindPlayer();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            _rb.velocity = new Vector2(-10, 0);
+            GameManager.AddMinionPoint();
+
+            //todo: Serduszka po interakcji
+            GetComponent<ParticleSystem>().Play();
+        }
     }
 
     private void RandomMovement()
@@ -36,21 +44,6 @@ public class MinionController : MonoBehaviour
 
     private void DestroyWhenBehindPlayer()
     {
-        if (transform.position.x < player.transform.position.x - 10)
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            _rb.velocity = new Vector2(-10, 0);
-            GameManager.AddMinionPoint();
-
-            //todo: Serduszka po interakcji
-            GetComponent<ParticleSystem>().Play();
-        }
+        if (transform.position.x < player.transform.position.x - 10) Destroy(gameObject);
     }
 }

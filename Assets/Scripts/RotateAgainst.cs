@@ -1,13 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class RotateAgainst : MonoBehaviour
 {
     public GameObject centerOfRotation;
     public float speedOfRotation;
-    void Update()
+    public int direction = -1;
+
+    private void Update()
     {
-        transform.RotateAround(centerOfRotation.transform.position, -Vector3.forward, speedOfRotation * Time.deltaTime);
+        transform.RotateAround(centerOfRotation.transform.position, direction * Vector3.forward,
+            speedOfRotation * Time.deltaTime);
     }
 }
