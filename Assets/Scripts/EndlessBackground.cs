@@ -14,13 +14,16 @@ public class EndlessBackground : MonoBehaviour
 
     private Transform _ground;
     private Transform _sky;
-
-    private void Start()
+    private void InitializeGameObjects()
     {
         _ground = GameObject.Find("Ground").transform;
         _sky = GameObject.Find("BG0_World").transform;
         _player = GameObject.FindWithTag("Player").transform;
         _mainBackground = GameObject.Find("Background");
+    }
+    private void Start()
+    {
+        InitializeGameObjects();
         int childCount = _mainBackground.transform.childCount;
         
         _backgroundLayers = new Transform[childCount - 1];
