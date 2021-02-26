@@ -1,19 +1,18 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
-using UnityEditor.U2D.Sprites;
-using UnityEngine;
-using UnityEngine.SocialPlatforms;
+﻿using UnityEngine;
 
 public class EndlessBackground : MonoBehaviour
 {
+    public float smoothing = 1f;
+    
     private Transform _player;
     private GameObject _mainBackground;
-    private Transform[] _backgroundLayers;
-
     private Transform _ground;
     private Transform _sky;
+    
+    private Transform[] _backgroundLayers;
+    private float[] _parallaxScales;
+    private Vector3 _previousCameraPosition;
+
     private void InitializeGameObjects()
     {
         _ground = GameObject.Find("Ground").transform;
@@ -24,13 +23,17 @@ public class EndlessBackground : MonoBehaviour
     private void Start()
     {
         InitializeGameObjects();
+        _previousCameraPosition = transform.position;
+        
         int childCount = _mainBackground.transform.childCount;
         
         _backgroundLayers = new Transform[childCount - 1];
+        _parallaxScales = new float[_backgroundLayers.Length];
         
-        for (int i = 1; i < childCount; i++)
+        for (int i = 0; i < _backgroundLayers.Length; i++)
         {
-            _backgroundLayers[i - 1] = _mainBackground.transform.GetChild(i);
+            _backgroundLayers[i] = _mainBackground.transform.GetChild(i + 1);
+            _parallaxScales[i] = -_backgroundLayers[i].position.z;
         }
     }
 
@@ -39,6 +42,7 @@ public class EndlessBackground : MonoBehaviour
         float playerPositionX = GetTargetXPosition(_player);
         foreach (Transform backgroundLayer in _backgroundLayers)
         {
+            SetBackgroundParallaxPosition(backgroundLayer);
             float backgroundPositionX = backgroundLayer.GetChild(2).position.x;
             if (playerPositionX < backgroundPositionX + .1f && playerPositionX > backgroundPositionX - .1f)
             {
@@ -46,6 +50,8 @@ public class EndlessBackground : MonoBehaviour
                 MoveGroundAndSky();
             }
         }
+        
+        _previousCameraPosition = transform.position;
     }
 
     private float GetTargetXPosition(Transform target)
@@ -66,5 +72,16 @@ public class EndlessBackground : MonoBehaviour
     {
         _ground.position = new Vector3(transform.position.x, _ground.position.y, _ground.position.z);
         _sky.position = new Vector3(transform.position.x, _sky.position.y, _sky.position.z);
+    }
+    
+    private void SetBackgroundParallaxPosition(Transform backgroundLayer)
+    {
+        Vector3 layerPosition = backgroundLayer.position;
+        float parallax = (_previousCameraPosition.x - transform.position.x) *
+                         _parallaxScales[backgroundLayer.GetSiblingIndex() - 1];
+        float backgroundTargetPositionX = layerPosition.x + parallax;
+        Vector3 backgroundTargetPosition = new Vector3(backgroundTargetPositionX, layerPosition.y, layerPosition.z);
+        backgroundLayer.position =
+            Vector3.Lerp(layerPosition, backgroundTargetPosition, smoothing * Time.deltaTime);
     }
 }
