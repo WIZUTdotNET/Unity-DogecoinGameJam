@@ -33,4 +33,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.layer == _groundLayerMask) _grounded = false;
     }
+
+    public void SpeedUpPlayer(float multiplier)
+    {
+        speed *= multiplier;
+    }
+
+    public void JumpMultiplier(float multiplier)
+    {
+        jumpVelocity *= multiplier;
+    }
 }
