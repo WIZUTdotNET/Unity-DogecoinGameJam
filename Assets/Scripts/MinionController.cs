@@ -47,7 +47,7 @@ public class MinionController : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             _rb.velocity = new Vector2(-10, 0);
-            GameMenager.AddMinionPoint();
+            GameManager.AddMinionPoint();
 
             //todo: Serduszka po interakcji
             GetComponent<ParticleSystem>().Play();
