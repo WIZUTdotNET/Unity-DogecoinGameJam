@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class MinionMovement : MonoBehaviour
+public class MinionController : MonoBehaviour
 {
     public GameObject player;
     public float accelerationTime = 2f;
@@ -20,13 +20,22 @@ public class MinionMovement : MonoBehaviour
 
     private void Update()
     {
+        RandomMovement();
+        DestroyWhenBehindPlayer();
+    }
+
+    private void RandomMovement()
+    {
         _timeLeft -= Time.deltaTime;
         if (_timeLeft <= 0)
         {
             _rb.velocity = new Vector2(Random.Range(-2f, 2f), 0);
-            _timeLeft += accelerationTime;
+            _timeLeft = accelerationTime;
         }
+    }
 
+    private void DestroyWhenBehindPlayer()
+    {
         if (transform.position.x < player.transform.position.x - 10)
         {
             Destroy(gameObject);
@@ -38,10 +47,10 @@ public class MinionMovement : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             _rb.velocity = new Vector2(-10, 0);
-            GameMenager.AddPoint();
+            GameManager.AddMinionPoint();
+
+            //todo: Serduszka po interakcji
             GetComponent<ParticleSystem>().Play();
-            //tutaj serduszka
-            Debug.Log("Jabłko");
         }
     }
 }

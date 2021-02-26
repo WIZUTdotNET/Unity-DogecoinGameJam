@@ -17,10 +17,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        GameManager.InitializeCoinUi();
         _playerRb.velocity = new Vector2(speed, _playerRb.velocity.y);
         if (_grounded && Input.GetButtonDown("Jump")) _playerRb.velocity = Vector2.up * jumpVelocity;
 
-        if (transform.position.y <= -5) GameMenager.GameEnd();
+        if (transform.position.y <= -5) GameManager.GameEnd();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
