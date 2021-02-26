@@ -4,12 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameMenager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     private static int _coinPoints;
     private static int _minionPoints;
-
-    private static Transform _coinUI = GameObject.Find("Canvas/Coin").transform.GetChild(0);
+    private static Transform _coinUI;
 
     public static void GameEnd()
     {
