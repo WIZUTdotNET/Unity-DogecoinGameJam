@@ -37,7 +37,7 @@ public class EndlessBackground : MonoBehaviour
         {
             SetBackgroundParallaxPosition(backgroundLayer);
             var backgroundPositionX = backgroundLayer.GetChild(2).position.x;
-            if (playerPositionX < backgroundPositionX + .1f && playerPositionX > backgroundPositionX - .1f)
+            if (playerPositionX > backgroundPositionX)
             {
                 MoveLayerToRight(backgroundLayer);
                 MoveGroundAndSky();
