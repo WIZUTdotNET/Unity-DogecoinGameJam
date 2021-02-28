@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class SpeedUpBuff : MonoBehaviour
 {
@@ -7,6 +8,11 @@ public class SpeedUpBuff : MonoBehaviour
     public float speedUpMultiplier = 2;
 
     private bool _isTriggered;
+
+    private void Start()
+    {
+        movement = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
+    }
 
     private void Update()
     {
