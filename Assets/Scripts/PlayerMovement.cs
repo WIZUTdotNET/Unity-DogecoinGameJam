@@ -20,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
         _tickSystemDelegate = delegate(object sender, TimeTickSystem.OnTickEvents events)
         {
             speed += _speedIncrement;
-            Debug.Log(events.tick);
         };
         TimeTickSystem.OnTick += _tickSystemDelegate;
         _playerRb = transform.GetComponent<Rigidbody2D>();
