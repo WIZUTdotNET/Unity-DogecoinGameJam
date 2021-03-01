@@ -6,16 +6,17 @@ public class GameManager : MonoBehaviour
 {
     private static int _coinPoints;
     private static int _highScore;
+
     private static int _coinMultiplier = 1;
     private static int _minionPoints;
     private static Transform _coinUI;
-    
+
 
     private static bool _hasShield;
 
     public static void GameEnd()
-    {  
-        var currentSceneName = SceneManager.GetActiveScene().name;
+    {
+        UpdateHighScore();
         SceneManager.LoadScene("DeadScene");
     }
 
@@ -25,12 +26,20 @@ public class GameManager : MonoBehaviour
         _minionPoints = 0;
     }
 
-    public static void HighScore()
+    public static int GetHighScore()
+    {
+        return _highScore;
+    }
+
+    public static bool UpdateHighScore()
     {
         if (_coinPoints > _highScore)
         {
-            _highScore = _coinPoints;  
+            _highScore = _coinPoints;
+            return true;
         }
+
+        return false;
     }
 
     public static void InitializeCoinUi()
