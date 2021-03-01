@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     private static int _minionPoints;
     private static Transform _coinUI;
 
+    private static bool _hasShield;
+
     public static void GameEnd()
     {
         var currentSceneName = SceneManager.GetActiveScene().name;
@@ -42,9 +44,24 @@ public class GameManager : MonoBehaviour
     {
         _coinMultiplier = multiplier;
     }
-    
+
     public static void RestoreCoinMultiplier()
     {
         _coinMultiplier = 1;
+    }
+
+    public static bool IsShielded()
+    {
+        return _hasShield;
+    }
+
+    public static void GiveShield()
+    {
+        _hasShield = true;
+    }
+
+    public static void DestroyShield()
+    {
+        _hasShield = false;
     }
 }
