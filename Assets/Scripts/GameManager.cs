@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     private static int _coinPoints;
+    private static int _coinMultiplier = 1;
     private static int _minionPoints;
     private static Transform _coinUI;
 
@@ -23,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     public static void AddCoinPoint()
     {
-        _coinPoints++;
+        _coinPoints += _coinMultiplier;
         UpdateCoinAmount();
     }
 
@@ -35,5 +36,15 @@ public class GameManager : MonoBehaviour
     public static void AddMinionPoint()
     {
         _minionPoints++;
+    }
+
+    public static void UpdateCoinMultiplier(int multiplier)
+    {
+        _coinMultiplier = multiplier;
+    }
+    
+    public static void RestoreCoinMultiplier()
+    {
+        _coinMultiplier = 1;
     }
 }
