@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     private static int _coinPoints;
+    private static int _highScore;
     private static int _coinMultiplier = 1;
     private static int _minionPoints;
     private static Transform _coinUI;
@@ -13,13 +14,23 @@ public class GameManager : MonoBehaviour
     private static bool _hasShield;
 
     public static void GameEnd()
-    {
-        
+    {  
         var currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene("DeadScene");
+    }
+
+    public static void ResetCoins()
+    {
         _coinPoints = 0;
         _minionPoints = 0;
-         
+    }
+
+    public static void HighScore()
+    {
+        if (_coinPoints > _highScore)
+        {
+            _highScore = _coinPoints;  
+        }
     }
 
     public static void InitializeCoinUi()

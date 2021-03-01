@@ -9,5 +9,9 @@ public class NewGame : MonoBehaviour
     public void Game()
     {
         SceneManager.LoadScene("maciej_scena");
+        GameManager.HighScore();
+        GameManager.ResetCoins();
+        
+
     }
 }

@@ -5,14 +5,26 @@ using UnityEngine.UI;
 
 public class Highscore : MonoBehaviour
 {
-    //public Text score;
-    //public Text highscore;
+    public Transform score;
+    public Transform highscore;
 
-    //private int _coinPoints;
-    //private Transform _coinUI;
+    private int _highScore=0;
+    private int _coinPoints;
+    private Transform _coinUI;
 
-    //_coinPoints = GameManager.GetCoins();
-    //score.GetComponent<Text>().text = _coinPoints.ToString();
+    public void Awake()
+    {
+        _coinPoints = GameManager.GetCoins();
+        Debug.Log(_coinPoints);
+        score.GetComponent<Text>().text = _coinPoints.ToString();
+
+        if(_coinPoints>_highScore)
+        {
+            _highScore = _coinPoints;
+            highscore.GetComponent<Text>().text = _highScore.ToString();
+        }
+    }
+    
 
 
 }
