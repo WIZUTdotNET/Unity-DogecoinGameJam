@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Net.NetworkInformation;
+using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -6,12 +8,21 @@ public class PlayerMovement : MonoBehaviour
     public float jumpVelocity = 10f;
     public float speed = 20f;
 
+    private float _speedIncrement = .08f;
     private bool _grounded;
     private LayerMask _groundLayerMask;
     private Rigidbody2D _playerRb;
 
+    private EventHandler<TimeTickSystem.OnTickEvents> _tickSystemDelegate;
+
     private void Start()
     {
+        _tickSystemDelegate = delegate(object sender, TimeTickSystem.OnTickEvents events)
+        {
+            speed += _speedIncrement;
+            Debug.Log(events.tick);
+        };
+        TimeTickSystem.OnTick += _tickSystemDelegate;
         _playerRb = transform.GetComponent<Rigidbody2D>();
         _groundLayerMask = LayerMask.NameToLayer("Ground");
         GameManager.InitializeCoinUi();

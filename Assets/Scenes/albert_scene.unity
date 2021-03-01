@@ -371,6 +371,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1635963743367931846, guid: 49a82289ddf13fb4abe49ebfda97606c,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635963743367931846, guid: 49a82289ddf13fb4abe49ebfda97606c,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635963743367931846, guid: 49a82289ddf13fb4abe49ebfda97606c,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1635963743367931847, guid: 49a82289ddf13fb4abe49ebfda97606c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -379,7 +394,7 @@ PrefabInstance:
     - target: {fileID: 1635963743367931847, guid: 49a82289ddf13fb4abe49ebfda97606c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.39
+      value: -2.42
       objectReference: {fileID: 0}
     - target: {fileID: 1635963743367931847, guid: 49a82289ddf13fb4abe49ebfda97606c,
         type: 3}
