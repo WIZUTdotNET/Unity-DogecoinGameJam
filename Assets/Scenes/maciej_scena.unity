@@ -295,7 +295,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 3
   m_Material: {fileID: 6200000, guid: 76c0dd072ec33a640892ce451284fccc, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 832927a142c9c0c48be46099984600bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpVelocity: 12
+  jumpVelocity: 14
   speed: 6
 --- !u!4 &494162997 stripped
 Transform:
@@ -359,6 +359,7 @@ MonoBehaviour:
   - {fileID: 3036807588499948195, guid: 5ac3b94827c41a445b838ae7eff7cc23, type: 3}
   - {fileID: 7513649310615460831, guid: 3f9686be94d09e249a58cf52ab462159, type: 3}
   - {fileID: 3942961808471993301, guid: eb6eb22744a13284ebff3014d9894bc7, type: 3}
+  - {fileID: 3942961808471993301, guid: 2cee6e8fa5291d14888ac82034118d45, type: 3}
   player: {fileID: 246845557}
 --- !u!4 &592418096
 Transform:
@@ -850,6 +851,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1594795225114915732, guid: 3e7e60ce4f126194c88f6ec78b4f516d,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1594795225114915735, guid: 3e7e60ce4f126194c88f6ec78b4f516d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -923,7 +929,7 @@ PrefabInstance:
     - target: {fileID: 1594795225114915738, guid: 3e7e60ce4f126194c88f6ec78b4f516d,
         type: 3}
       propertyPath: jumpVelocity
-      value: 12
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e7e60ce4f126194c88f6ec78b4f516d, type: 3}
