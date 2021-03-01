@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
 
     public static void GameEnd()
     {
-        UpdateHighScore();
         SceneManager.LoadScene("DeadScene");
     }
 
