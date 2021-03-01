@@ -11,7 +11,6 @@ public class WowPopup : MonoBehaviour
         new Color32(55, 161, 191, 255), new Color32(243, 7, 250, 255), new Color32(230, 228, 52, 255) };
     private string[] _sayings = new[] { "wow", "much wow", "very wow", "such wow", "coin", "much coin", "very coin", "such coin", "cool"};
     
-//, 
     public static WowPopup Create(Transform transformPosition, Transform prefab)
     {
         Transform wowPopupTransform = Instantiate(prefab, transformPosition.position, Quaternion.identity);
