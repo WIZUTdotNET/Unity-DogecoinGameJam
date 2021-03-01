@@ -495,7 +495,7 @@ PrefabInstance:
     - target: {fileID: 1635963743367931847, guid: 34fa89bd881ad4a48b6caebc593c8635,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1635963743367931847, guid: 34fa89bd881ad4a48b6caebc593c8635,
         type: 3}
@@ -1057,7 +1057,7 @@ PrefabInstance:
     - target: {fileID: 6411104406474259420, guid: 872cb37d23aa16547bf176b060500ada,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6411104406474259420, guid: 872cb37d23aa16547bf176b060500ada,
         type: 3}
@@ -2159,6 +2159,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7732230585609366504, guid: b9f45ad34442eec4087fafd4d6814515,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7732230585609366504, guid: b9f45ad34442eec4087fafd4d6814515,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9f45ad34442eec4087fafd4d6814515, type: 3}
 --- !u!1001 &1635963743192725426
@@ -2464,7 +2474,7 @@ PrefabInstance:
     - target: {fileID: 8259300035156320093, guid: dd78975dab9563843a12933f6bc6061b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8259300035156320093, guid: dd78975dab9563843a12933f6bc6061b,
         type: 3}
