@@ -11,6 +11,7 @@ public class MinionController : MonoBehaviour
 
     private void Start()
     {
+        player=GameObject.FindWithTag("Player");
         _rb = GetComponent<Rigidbody2D>();
     }
 
