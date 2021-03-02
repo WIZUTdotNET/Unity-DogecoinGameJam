@@ -6,8 +6,8 @@ public class Coin : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            GameManager.AddCoinPoint();
             WowPopup.Create(collision.transform, Resources.Load("WowPopup"), " coin");
+            GameManager.AddCoinPoint();
             Destroy(gameObject);
         }
     }

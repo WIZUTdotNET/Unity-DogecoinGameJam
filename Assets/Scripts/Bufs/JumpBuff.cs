@@ -31,6 +31,7 @@ public class JumpBuff : MonoBehaviour
         if (collision.CompareTag("Player") && !_isTriggered)
         {
             WowPopup.Create(collision.transform, Resources.Load("WowPopup"), " jump");
+            GameManager.PlayCollection();
             JumpIncrease();
             _isTriggered = true;
             GetComponent<SpriteRenderer>().enabled = false;
@@ -39,13 +40,11 @@ public class JumpBuff : MonoBehaviour
 
     private void JumpIncrease()
     {
-        // Debug.Log("Skacze");
         movement.JumpMultiplier(jumpMultiplier);
     }
 
     private void JumpDecrease()
     {
-        // Debug.Log("Nie Skacze");
         movement.JumpMultiplier(1 / jumpMultiplier);
     }
 }
