@@ -1506,7 +1506,7 @@ MonoBehaviour:
   m_text: "Endless runner in the world of Doge. You (as a Doge) have to run as far
     as you can on endless map, trying to avoid obstacles. \nWhile running you can
     collect coins (Doge coins), which are used to calculate final score. As you go
-    you can collect buffs like higher jump or shield."
+    you can help other dogies and collect buffs like higher jump or shield."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0704367bb973c3144b9b8d271a391d98, type: 2}
   m_sharedMaterial: {fileID: 5561703079314840923, guid: 0704367bb973c3144b9b8d271a391d98,
@@ -1534,7 +1534,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
+  m_fontSize: 30.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

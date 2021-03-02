@@ -26,9 +26,8 @@ public class MinionController : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             _rb.velocity = new Vector2(-4, 0);
+            WowPopup.Create(collision.transform, Resources.Load("WowPopup"), " help");
             GameManager.AddMinionPoint();
-
-            //todo: Serduszka po interakcji
             GetComponent<ParticleSystem>().Play();
         }
     }

@@ -132,7 +132,6 @@ GameObject:
   - component: {fileID: 9135932}
   - component: {fileID: 9135931}
   - component: {fileID: 9135930}
-  - component: {fileID: 9135933}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -205,18 +204,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9135933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9135929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f108c470a1ec4eae9fe7cedf15c615cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &93948162
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,6 +385,7 @@ GameObject:
   m_Component:
   - component: {fileID: 391713336}
   - component: {fileID: 391713337}
+  - component: {fileID: 391713338}
   m_Layer: 5
   m_Name: Buttons
   m_TagString: Untagged
@@ -451,6 +439,18 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!114 &391713338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391713335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f108c470a1ec4eae9fe7cedf15c615cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &408230529
 GameObject:
   m_ObjectHideFlags: 0
@@ -1513,7 +1513,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9135933}
+      - m_Target: {fileID: 391713338}
         m_MethodName: BackToMenu
         m_Mode: 1
         m_Arguments:
