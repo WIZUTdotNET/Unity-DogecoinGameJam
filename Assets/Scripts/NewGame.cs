@@ -16,7 +16,7 @@ public class NewGame : MonoBehaviour
     public void Game()
     {
 
-        SceneManager.LoadScene("maciej_scena");
+        SceneManager.LoadScene("PlayableScene");
         GameManager.ResetCoins();
          
     }
