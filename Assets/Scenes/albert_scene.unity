@@ -133,6 +133,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpeedUpModifier (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1955394812020046585, guid: 3b4c8c75ad6643640b3bfd42ab9d26db,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1955394812020046588, guid: 3b4c8c75ad6643640b3bfd42ab9d26db,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -201,6 +206,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpeedUpModifier (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955394812020046585, guid: 3b4c8c75ad6643640b3bfd42ab9d26db,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1955394812020046588, guid: 3b4c8c75ad6643640b3bfd42ab9d26db,
         type: 3}
@@ -271,6 +281,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin
       objectReference: {fileID: 0}
+    - target: {fileID: 1635963743367931841, guid: dfd784aaf8f76264da7ba740640f1f35,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1635963743367931847, guid: dfd784aaf8f76264da7ba740640f1f35,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -339,6 +354,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpeedUpModifier (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955394812020046585, guid: 3b4c8c75ad6643640b3bfd42ab9d26db,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1955394812020046588, guid: 3b4c8c75ad6643640b3bfd42ab9d26db,
         type: 3}
@@ -415,6 +435,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpeedUpModifier (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1955394812020046585, guid: 3b4c8c75ad6643640b3bfd42ab9d26db,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1955394812020046588, guid: 3b4c8c75ad6643640b3bfd42ab9d26db,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -490,6 +515,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trap
       objectReference: {fileID: 0}
+    - target: {fileID: 1635963743367931841, guid: 34fa89bd881ad4a48b6caebc593c8635,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1635963743367931847, guid: 34fa89bd881ad4a48b6caebc593c8635,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -558,6 +588,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpeedUpModifier
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955394812020046585, guid: 3b4c8c75ad6643640b3bfd42ab9d26db,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1955394812020046588, guid: 3b4c8c75ad6643640b3bfd42ab9d26db,
         type: 3}
@@ -633,6 +668,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7665802298610604681, guid: f648d4f55761daf4e8c401924a78fc43,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7665802298610604687, guid: f648d4f55761daf4e8c401924a78fc43,
         type: 3}
@@ -714,7 +754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1976473143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -853,6 +893,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WowPopup
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774616585231040178, guid: 8bb109c9c33a00f4da0eaf95a176abe5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4639268272593925305, guid: 8bb109c9c33a00f4da0eaf95a176abe5,
         type: 3}
@@ -1023,6 +1068,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5814076421575485047, guid: 8a9347c00766d3340bb3d3e4588aacbc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5814076421575485049, guid: 8a9347c00766d3340bb3d3e4588aacbc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1091,6 +1141,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6411104406474259416, guid: 872cb37d23aa16547bf176b060500ada,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6411104406474259420, guid: 872cb37d23aa16547bf176b060500ada,
         type: 3}
@@ -1270,6 +1325,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911486258246633558, guid: e0ecf5a17b5e60241bd78088cd80de22,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0ecf5a17b5e60241bd78088cd80de22, type: 3}
