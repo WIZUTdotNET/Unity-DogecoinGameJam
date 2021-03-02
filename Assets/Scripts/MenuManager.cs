@@ -6,7 +6,7 @@ public class MenuManager : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("albert_scene");
+        SceneManager.LoadScene("PlayableScene");
     }
 
     public void Settings()
