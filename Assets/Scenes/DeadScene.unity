@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 9135932}
   - component: {fileID: 9135931}
   - component: {fileID: 9135930}
+  - component: {fileID: 9135933}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -983,7 +984,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: WOW AGAIN?
+  m_text: WOW AGAIN? (space)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0704367bb973c3144b9b8d271a391d98, type: 2}
   m_sharedMaterial: {fileID: 5561703079314840923, guid: 0704367bb973c3144b9b8d271a391d98,
@@ -1011,7 +1012,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21.5
+  m_fontSize: 18
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1168,7 +1169,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 220, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1224845219
 MonoBehaviour:
@@ -1791,7 +1792,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 220, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1766013476
 MonoBehaviour:
