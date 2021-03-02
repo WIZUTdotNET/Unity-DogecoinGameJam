@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5814076421575485046}
   m_Layer: 0
   m_Name: AudioManager
-  m_TagString: Untagged
+  m_TagString: AudioManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,4 +73,9 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 03c5fbea8bec40e408f1953b2f6158fe, type: 3}
     source: {fileID: 0}
     volume: 0.2
+    pitch: 1
+  - soundName: win
+    clip: {fileID: 8300000, guid: 2b3da2dde2b4bfa4fa47b40bf67feaba, type: 3}
+    source: {fileID: 0}
+    volume: 0.4
     pitch: 1

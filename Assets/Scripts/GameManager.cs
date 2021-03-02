@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
     {
         _coinPoints += _coinMultiplier;
         UpdateCoinAmount();
+        PlayCollection();
     }
 
     public static int GetCoins()
@@ -65,11 +66,13 @@ public class GameManager : MonoBehaviour
     public static void AddMinionPoint()
     {
         _minionPoints++;
+        PlayCollection();
     }
 
     public static void UpdateCoinMultiplier(int multiplier)
     {
         _coinMultiplier = multiplier;
+        PlayCollection();
     }
 
     public static void RestoreCoinMultiplier()
@@ -85,10 +88,17 @@ public class GameManager : MonoBehaviour
     public static void GiveShield()
     {
         _hasShield = true;
+        PlayCollection();
     }
 
     public static void DestroyShield()
     {
         _hasShield = false;
+    }
+
+    public static void PlayCollection()
+    {
+        string[] coinCollection = new[] {"coinCollection1", "coinCollection2"};
+        GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>().Play(coinCollection[Random.Range(0, coinCollection.Length)]);
     }
 }
