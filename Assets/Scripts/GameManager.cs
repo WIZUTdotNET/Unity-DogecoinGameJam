@@ -102,4 +102,9 @@ public class GameManager : MonoBehaviour
         string[] coinCollection = new[] {"coinCollection1", "coinCollection2"};
         GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>().Play(coinCollection[Random.Range(0, coinCollection.Length)]);
     }
+
+    public static int GetPetedDogs()
+    {
+        return _minionPoints;
+    }
 }

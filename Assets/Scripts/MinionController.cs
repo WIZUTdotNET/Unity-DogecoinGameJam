@@ -9,9 +9,11 @@ public class MinionController : MonoBehaviour
     private Rigidbody2D _rb;
     private float _timeLeft;
 
+    private bool _isTriggered;
+
     private void Start()
     {
-        player=GameObject.FindWithTag("Player");
+        player = GameObject.FindWithTag("Player");
         _rb = GetComponent<Rigidbody2D>();
     }
 
@@ -23,11 +25,11 @@ public class MinionController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !_isTriggered)
         {
+            _isTriggered = true;
             _rb.velocity = new Vector2(-4, 0);
             GameManager.AddMinionPoint();
-
             //todo: Serduszka po interakcji
             GetComponent<ParticleSystem>().Play();
         }
