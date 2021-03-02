@@ -74,3 +74,8 @@ MonoBehaviour:
     source: {fileID: 0}
     volume: 0.2
     pitch: 1
+  - soundName: win
+    clip: {fileID: 8300000, guid: 2b3da2dde2b4bfa4fa47b40bf67feaba, type: 3}
+    source: {fileID: 0}
+    volume: 0.4
+    pitch: 1

@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/maciej_scena.unity
     guid: bb7995577250e054291eab6bde46e88b
+  - enabled: 1
+    path: Assets/Scenes/PlayableScene.unity
+    guid: 267cb6756a7efd24b9a8570d65ef0fba
   m_configObjects: {}

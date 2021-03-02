@@ -13,7 +13,11 @@ public class Highscore : MonoBehaviour
     {
         if (GameManager.UpdateHighScore())
         {
-            //Activated when Highsocre is beaten
+            GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>().Play("win");
+        }
+        else
+        {
+            GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>().Play("lose");
         }
 
         _coinPoints = GameManager.GetCoins();
