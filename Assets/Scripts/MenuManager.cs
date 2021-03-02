@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
@@ -19,7 +18,7 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
     }
 
-    public static void BackToMenu()
+    public void BackToMenu()
     {
         SceneManager.LoadScene("MainMenu");
     }
