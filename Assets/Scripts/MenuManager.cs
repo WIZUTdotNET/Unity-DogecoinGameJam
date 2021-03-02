@@ -9,18 +9,18 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("PlayableScene");
     }
 
-    public void Settings()
+    public void Credits()
     {
-        throw new NotImplementedException();
-    }
-
-    public void BackToMenu()
-    {
-        SceneManager.LoadScene("albert_MainMenu");
+        SceneManager.LoadScene("Credits");
     }
 
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public static void BackToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
