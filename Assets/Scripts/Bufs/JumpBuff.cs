@@ -30,6 +30,7 @@ public class JumpBuff : MonoBehaviour
     {
         if (collision.CompareTag("Player") && !_isTriggered)
         {
+            WowPopup.Create(collision.transform, Resources.Load("WowPopup"), " jump");
             JumpIncrease();
             _isTriggered = true;
             GetComponent<SpriteRenderer>().enabled = false;

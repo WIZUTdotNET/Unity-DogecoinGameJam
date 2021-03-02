@@ -24,6 +24,7 @@ public class CoinBuff : MonoBehaviour
     {
         if (collision.CompareTag("Player") && !_isTriggered)
         {
+            WowPopup.Create(collision.transform, Resources.Load("WowPopup"), " more coin");
             CoinIncrease();
             _isTriggered = true;
             GetComponent<SpriteRenderer>().enabled = false;

@@ -6,6 +6,7 @@ public class ShieldBuff : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            WowPopup.Create(collision.transform, Resources.Load("WowPopup"), " shield");
             GameManager.GiveShield();
             Destroy(gameObject);
         }

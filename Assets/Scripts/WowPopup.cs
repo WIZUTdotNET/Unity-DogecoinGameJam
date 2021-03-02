@@ -1,4 +1,6 @@
-﻿using TMPro;
+﻿using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class WowPopup : MonoBehaviour
@@ -9,34 +11,35 @@ public class WowPopup : MonoBehaviour
     private Color _textColor;
     private Color32[] _colors = new[] { new Color32(255, 0, 0, 255), new Color32(88, 245, 117, 255), 
         new Color32(55, 161, 191, 255), new Color32(243, 7, 250, 255), new Color32(230, 228, 52, 255) };
-    private string[] _sayings = new[] { "wow", "much wow", "very wow", "such wow", "coin", "much coin", "very coin", "such coin", "cool"};
+    private List<string> _sayingsTemplate = new List<string>() { "wow", "much wow", "very wow", "such wow", "cool"};
     
-    public static WowPopup Create(Transform transformPosition, Transform prefab)
+    public static WowPopup Create(Transform transformPosition, Object prefab, string type)
     {
-        Transform wowPopupTransform = Instantiate(prefab, transformPosition.position, Quaternion.identity);
-        WowPopup wowPopup = wowPopupTransform.GetComponent<WowPopup>();
-        wowPopup.SetUp(transformPosition);
+        GameObject wowPopupTransform = (GameObject)Instantiate(prefab, transformPosition.position, Quaternion.identity);
+        WowPopup wowPopup = wowPopupTransform.transform.GetComponent<WowPopup>();
+        wowPopup.SetUp(transformPosition, type);
 
         return wowPopup;
     }
     private void Awake()
     {
         _textMeshPro = transform.GetComponent<TextMeshPro>();
-        SetUp(transform);
+        SetUp(transform, "");
     }
 
-    private void SetUp(Transform givenTransform)
+    private void SetUp(Transform givenTransform, string type)
     {
         _transformPosition = givenTransform;
         _textMeshPro.faceColor = _colors[Random.Range(0, _colors.Length)];
         _textColor = _textMeshPro.color;
-        _textMeshPro.text = _sayings[Random.Range(0, _sayings.Length)];
+        _sayingsTemplate = _sayingsTemplate.Select(str => string.Concat(str, type)).ToList();
+        _textMeshPro.text = _sayingsTemplate[Random.Range(0, _sayingsTemplate.Count)];
         _timer = .3f;
     }
 
     private void Update()
     {
-        transform.position = new Vector3(_transformPosition.position.x, transform.position.y + 8f * Time.deltaTime, transform.position.z);
+        transform.position = new Vector3(_transformPosition.position.x, transform.position.y + 5f * Time.deltaTime, transform.position.z);
         _timer -= Time.deltaTime;
         if (_timer <= 0)
         {
