@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -60,7 +61,7 @@ public class GameManager : MonoBehaviour
 
     private static void UpdateCoinAmount()
     {
-        _coinUI.GetComponent<Text>().text = _coinPoints.ToString();
+        _coinUI.GetComponent<TextMeshProUGUI>().text = _coinPoints.ToString();
     }
 
     public static void AddMinionPoint()

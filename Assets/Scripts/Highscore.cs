@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class Highscore : MonoBehaviour
@@ -21,7 +22,7 @@ public class Highscore : MonoBehaviour
         }
 
         _coinPoints = GameManager.GetCoins();
-        score.GetComponent<Text>().text = _coinPoints.ToString();
-        highscore.GetComponent<Text>().text = GameManager.GetHighScore().ToString();
+        score.GetComponent<TextMeshProUGUI>().text = _coinPoints.ToString();
+        highscore.GetComponent<TextMeshProUGUI>().text = GameManager.GetHighScore().ToString();
     }
 }
