@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class JumpBuff : MonoBehaviour
 {
@@ -13,6 +12,7 @@ public class JumpBuff : MonoBehaviour
     {
         movement = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
     }
+
     private void Update()
     {
         if (_isTriggered)
