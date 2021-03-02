@@ -30,6 +30,7 @@ public class SpeedUpBuff : MonoBehaviour
     {
         if (collision.CompareTag("Player") && !_isTriggered)
         {
+            WowPopup.Create(collision.transform, Resources.Load("WowPopup"), " speed");
             SpeedUpPlayer();
             _isTriggered = true;
             GetComponent<SpriteRenderer>().enabled = false;
