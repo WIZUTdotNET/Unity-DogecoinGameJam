@@ -123,4 +123,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: {fileID: 0}
   speedUpDuration: 1
-  speedUpMultiplier: 2
+  speedUpMultiplier: 1.4
